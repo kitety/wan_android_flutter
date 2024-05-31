@@ -33,9 +33,31 @@ class _HomePageState extends State<HomePage> {
                 control: const SwiperControl(),
               ),
             ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) => _listItemView(index),
+                itemCount: 10,
+              ),
+            )
           ],
         ),
       ),
+    );
+  }
+
+  Widget _listItemView(int index) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Image.network(
+              'https://picsum.photos/id/237/200/300',
+              width: 30.r,
+              height: 30.r,
+            )
+          ],
+        ),
+      ],
     );
   }
 }
